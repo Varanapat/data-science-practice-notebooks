@@ -1,1 +1,1 @@
-# Anything
+This repository contains learning notebooks and practical examples for foundational topics in Data Science and Artificial Intelligence. The materials are designed for educational purposes and hands-on experimentation using Google Colab.
