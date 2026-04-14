@@ -8,10 +8,21 @@ from linebot.v3.webhooks import MessageEvent, TextMessageContent
 from linebot.v3.exceptions import InvalidSignatureError
 
 app = Flask(__name__)
+# print(os)
+from dotenv import load_dotenv
 
-# ✅ อ่านค่าจาก environment variable แทนการใส่ตรงๆ
-configuration = Configuration(access_token=os.environ.get('LINE_CHANNEL_ACCESS_TOKEN'))
-handler = WebhookHandler(os.environ.get('LINE_CHANNEL_SECRET'))
+load_dotenv()
+
+configuration = Configuration(
+    access_token=os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
+)
+
+handler = WebhookHandler(
+    os.getenv("LINE_CHANNEL_SECRET")
+)
+
+# print("TOKEN:", os.environ.get("LINE_CHANNEL_ACCESS_TOKEN"))
+# print("SECRET:", os.environ.get("LINE_CHANNEL_SECRET"))
 
 @app.route("/webhook", methods=['POST'])
 def callback():
@@ -38,4 +49,4 @@ def handle_message(event):
 
 if __name__ == "__main__":
     # ✅ เปิด host='0.0.0.0' ให้ ngrok เข้าได้
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
