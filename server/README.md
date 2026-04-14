@@ -1,5 +1,9 @@
 ## HOW TO Connect webhook with line using Cloude Cloudflare Tunnel แบบไม่ทางการ
 tester101 เขียนลวกๆ
+เนื่องจากที่ทำจะเชื่อมกับ Line แนะนำให้ไปเปิด account ก่อน
+แล้วก็จะได้ข้อมูลที่ต้องใส่ตามที่ไฟล์ example.env
+
+ใส่ข้อมูลลงไป แล้วเปลี่ยนชื่อไฟล์เป็น .env 
 
 ติดตั้ง Cloudflare Tunnel 
 ```
